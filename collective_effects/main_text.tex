@@ -1,0 +1,223 @@
+%Copyright (c) 2001, 2009, 2010 The American Physical Society.
+\documentclass[pre,reprint,onecolumn,showpacs,showkeys,superscriptaddress,amsmath,amssymb]{revtex4-1}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+
+\begin{document}
+
+\title{Power-stroke driven collective system}
+
+
+\author{M.~Caruel}
+\affiliation{
+CNRS,
+Paris,  France
+}
+
+\author{R.~Sheshka}
+\affiliation{
+Lab,
+Paris,  France
+}
+\author{L.~Truskinovsky}
+\affiliation{
+CNRS,
+Paris,  France
+}
+
+\date{\today}
+
+\begin{abstract}
+To do
+\end{abstract}
+
+\keywords{molecular motors, Lymn-Taylor cycle, muscle contraction, Brownian ratchets, non-processive motors}
+
+
+\maketitle
+
+\section{Introduction}
+
+To do
+
+\begin{figure}[h!]
+	\begin{center}
+\includegraphics[scale=1]{Figure1.eps}
+    \end{center}
+\caption{Schematic illustration of the four-step Lymn-Taylor cycle showing the power-stroke $A \rightarrow B$, the detachment $B \rightarrow C$, the re-cocking of the power-stroke $C \rightarrow D$ and the final re-attachment $D \rightarrow A$ bringing the system back into the original state.}\label{Figure1}
+\end{figure}
+
+
+
+To justify the proposed coupling of the power-stroke machinery with the attachment-detachment mechanism, we argue that the conformational state of the power-stroke element provides \emph{steric regulation} of the distance between the myosin head and the actin filament. More specifically, we assume that when the lever arm swings, the interaction of the head with the  binding site weakens, see Fig.~\ref{Figure2}a.  
+
+\begin{figure}[h!]
+	\begin{center}
+\includegraphics[scale=1]{Figure2.eps}
+    \end{center}
+\caption{(a) An illustration of the steric effect associated with the power-stroke; (b) sketch of the mechanical model.}\label{Figure2}
+\end{figure}
+
+A schematic representation of the proposed model is shown in Fig.~\ref{Figure2}b, where $x$ is the observable position of a myosin head,  $y$ is the internal variable characterizing the phase configuration of the power stroke element and $z$ is another internal variable responsible for the coupling. The "macroscopic" variable $x$ sees a symmetric energy landscape and is not directly affected by the ATP hydrolysis. Both asymmetry and driving can then originate only from the coupling between the  external  and the internal degrees of freedom.
+
+
+\section{Two elastically coupled motors. Potential model}
+
+We consider two elastically coupled motors, see  Fig.~\ref{Figure2}b in isometric condition. We can imagine two distinct devices : two brownian motors coupled to common rigid backbone (in practice it's mean just much more high stiffens) this is the 'parallel' configuration; one other possibility it is to link two brownian motors by an interactive potential, the simplest choice will  be a linear spring , we obtain the 'in series' configuration.
+
+\textbf{\textit{The model}}
+ We write the energy of the system for one distinct motor 
+\begin{equation}\label{Eq1}
+\hat{G}(x_{i},y_{i},z_{i})=z_{i}\Phi(x_{i})+V(y_{i}-x_{i})+\Lambda(y_{i},y_{i+1},y_{i-1}),\quad i=1,2
+\end{equation}
+where $\Phi(x_{i})$ is a  non-polar periodic potential representing the binding strength of the actin filament and  $V(y_{i}-x_{i})$ is a double-well potential describing the power-stroke element. The two-well structure of the potential  implies that the power-stroke mechanism can be either  \emph{folded } into the post-power-stroke  state or  \emph{unfolded}  into the pre-power-stroke state. For simplicity, we assume that the two wells of the potential $V(y_{i}-x_{i})$ are symmetric which eliminates a redundant polarity.
+
+The coupling between the state of the power-stroke element $y_{i}-x_{i}$ and the spatial position of the motor $x_{i}$ is implemented through the internal variable $z_{i}$. In the simplest version of the model $z$ is assumed to be a function of the state of the power-stroke element
+\begin{equation} \label{Eq2}
+z(x_{i},y_{i})=\Psi(y_{i}-x_{i}).
+ \end{equation}
+This function must have a particular structure in order to mimic the underlying steric interaction, see Fig.~\ref{Figure4}. We assume that when a myosin head executes the power-stroke it moves away from the actin filament and therefore the control function $\Psi(y_{i}-x_{i})$ should progressively switch \emph{off}  the actin potential. Similarly, when the power-stroke is recharging the myosin head moves closer to the actin filament and the function $\Psi(y_{i}-x_{i})$  should bring the actin potential back into \emph{on} configuration.
+
+The coupling between the different motors $\Lambda(y_{i},y_{i+1},y_{i-1})$ considered to be a short range interaction , we take in account only closed neighboring. \textcolor{red}{\textit{ Should the interaction depends on $y_{i}-x_{i}$ instead of $y_{i}$? Also in fact the parallel configuration should be considered as extreme case of long-range interaction...}}
+
+The overdamped stochastic dynamics of the system with energy \eqref{Eq1}  is  described by the following 2D system of (dimensionless) Langevin equations
+\begin{equation}\label{Eq3}
+\begin{aligned}
+\dot{x}_{i}= &-\partial_{x_{i}} \hat{G}(x_{i},y_{i}) -f_{i}(t)+\sqrt{2 D}\xi_{x_{i}}(t)\\
+\dot{y}_{i}=&-\partial_{y_{i}} \hat{G}(x_{i},y_{i})  +f_{i}(t)+\sqrt{2 D}\xi_{y_{i}}(t),i=1,2.
+\end{aligned}
+\end{equation}
+Here $\xi (t)$ is a conventional white noise with $\langle\xi_{x_i,y_i}(t)\rangle = 0$, and $\langle\xi_{i}(t)\xi_{j}(s)\rangle = \delta_{ij}\delta(t-s)$. The parameter  $D=k_B \theta/E$ is a dimensionless measure of temperature $\theta$ and $k_B$ is the Boltzmann constant; for simplicity the viscosity coefficients are assumed to be the same for variables $x_{i}$ and $y_{i}$. The \emph{force couple}  $f_{i}(t)$ with zero average represents a correlated component of the noise and characterizes mechanistically the degree of non-equilibrium in the external reservoir (the abundance of ATP).
+
+We can say that the system \eqref{Eq3} describes the \emph{power-stroke-driven} ratchet because the correlated noise $f_{i}(t)$ acts on the relative displacement $y_{i}-x_{i}$. It effectively "rocks" the bi-stable potential and  the control function  $\Psi(y_{i}-x_{i})$ converts such  "rocking" into the "flashing" of the periodic potential $\Phi(x_{i})$. 
+
+\begin{figure}[h!]
+	\begin{center}
+\includegraphics[scale=1]{Figure6.eps}
+    \end{center}
+\caption{The functions $\Phi$, $V$ and $f$ used in numerical experiments.}\label{Figure6}
+\end{figure}
+
+For numeric studies of  the system \eqref{Eq3}, in our
+  computational experiments we can use a periodic extension of the symmetric triangular potential $\Phi(x)$ with amplitude $Q$ and period $L$, see Fig.~\ref{Figure6}a
+\begin{equation*}
+	\Phi(x)=\left\{
+	\begin{aligned}
+	&\frac{2Q}{L}x\;\text{if}\;0 \leq x<L/2,\\
+	&\frac{2Q}{L}(L-x)\;\text{if}\;L/2\leq x<L.
+	\end{aligned}
+	\right.
+\end{equation*}
+The symmetric  potential $V(y-x)$ is assumed to be bi-quadratic with the same  stiffness $k$  in both phases. The distance between the bottoms of the wells is denoted by $a$, see Fig.~\ref{Figure6}b, so
+\begin{equation*}
+ V(y-x)=
+\left\{%
+ \begin{aligned}
+  &\frac{1}{2} k \left(y-x+a/2\right)^2\;\text{if}\;y-x < 0\\
+  &\frac{1}{2} k \left(y-x-a/2\right)^2\;\text{if}\;y-x\geqslant 0.
+ \end{aligned}%
+\right.
+\end{equation*}
+ The correlated  component of the noise  $f(t)$  is interpreted as the simplest \emph{ac driving} described by a periodic extension of a rectangular shaped function with amplitude $A$ and period $T$ (shown in Fig.~\ref{Figure6}c)
+\begin{equation*}
+f(t)=\left\{
+\begin{aligned}
+&+ A\;\text{if}\;0\leq t\leq T/2,\\
+&- A\;\text{if}\;T/2\leq t\leq T.
+\end{aligned}
+\right.
+\end{equation*}
+
+
+Finally, we postulate that  the   switching of the actin potential from \textit{on} to \textit{off} state takes place at  different  values of the variable $y_{i}-x_{i}$, depending on the \emph{direction} of the conformational change (folding or unfolding). To this end, we introduce the memory operator
+\begin{equation} \label{Eq4}
+ z_{i}\{x_{i},y_{i}\}=\widehat{\Psi}\{y_{i}(t)-x_{i}(t)\}
+  \end{equation}
+whose output depends on whether the system is on the "striking" or on the "recharging" branch of the trajectory, see Fig.~\ref{Figure9}. Such memory structure  can be also described by a rate independent differential relation of the form
+\begin{equation}\label{Eq5}
+\dot{z}= Q(x,y,z)\dot{x}+R(x,y,z)\dot{y},	
+\end{equation}
+where the implied non-integrability  makes the model non-holonomic. Indeed, if we introduce a vector variable $\textbf{u}=(x,y,z)$, and neglect the time dependent external  noise we can rewrite the   system of the governing equations in the form $\dot{\textbf{u}}=\textbf{F}(\textbf{u})$, where $\textbf{F}$ is no longer a gradient. The resulting Brownian motor can potentially advance even in the absence of the correlated noise by extracting energy directly from the non-holonomic control mechanism.
+
+\begin{figure}[h!]
+	\begin{center}
+\includegraphics[scale=1 ]{Figure9.eps}
+    \end{center}
+\caption{(Color online) The hysteresis operator $\widehat{\Psi}\{y(t)-x(t)\}$ linking the degree of attachment $z$ with the previous hystory of the power-stroke configuration $y(t)-x(t)$. }\label{Figure9}
+\end{figure}
+
+In the Langevin setting \eqref{Eq3}, the history dependence may mean that the underlying microscopic stochastic process is non-Markovian, or that there are additional non-thermalized degrees of freedom that are not represented explicitly.
+
+
+To fix the parametrization, we need to specify the dimensional scales. It is natural to use  the distance between the bottoms of the wells in the bi-stable potential as the length scale $l$ so $a=1$. We have also made a standard assumption that the separation between the binding cites along the actin filament is of the same order as the power-stroke size and therefore $L=1$. The height of the barrier between the binding sites was chosen as the energy scale $E$, so we put $Q=1$.
+ The relaxation time scale  was set by the viscosity coefficient  $\eta$ and therefore  $\tau=\eta l^{2}/E$.  To ensure that the ac driving is slow at the scale of internal relaxation  we  took $T=10$. The curvature of the energy wells in the bistable potential should be comparable with $E/l^2$  and therefore we took a generic value $k=1.5$. In the computations we used the value of the small parameter $\varepsilon=0.2$ which made the attachment and the detachment events sufficiently sharp.
+ 
+ 
+In present we can write the explicit equations for the system of two coupled motors from \eqref{Eq3} in isometric and isotonic experimental devices. We start by isometric case.
+
+
+\subsection{parallel configuration}
+
+In isometric case, depending of nature of interaction between the motors, we can formulate first simple case - the parallel configuration, where two motors interacts though the common rigid backbone with attached linear spring with stiffness $k_f$.
+
+\begin{equation}\label{Eq6}
+\begin{aligned}
+\dot{x}_{1}= &-\partial_{x_{1}} G(x_{1},y_{1}) -f_{1}(t)+\sqrt{2 D}\xi_{x_{1}}(t)\\
+\dot{y}_{1}=&-\partial_{y_{1}} G(x_{1},y_{1})  +f_{1}(t)-k_f(y_{1}-y_{0})+\sqrt{2 D}\xi_{y_{1}}(t)\\
+\dot{x}_{2}= &-\partial_{x_{2}} G(x_{2},y_{2}) -f_{2}(t)+\sqrt{2 D}\xi_{x_{2}}(t)\\
+\dot{y}_{2}=&-\partial_{y_{2}} G(x_{2},y_{2})  +f_{2}(t)-k_f(y_{2}-y_{0})+\sqrt{2 D}\xi_{y_{2}}(t).
+\end{aligned}
+\end{equation}
+with the reduced potential $G(x_{1,2},y_{1,2}) = \widehat{\Psi}\{y_{1,2}(t)-x_{1,2}(t)\}\Phi(x_{1,2}) + V(y_{1,2}-x_{1,2})$. The $y_0$ it's  a 'slow' variable which can be see as a constant.  We can define the isometric tension generated by the system simply as:
+\begin{equation}\label{Eq7}
+T = T_{1} + T_{2} = k_{f}(y_{2}+y_{1}-2y_{0})
+\end{equation}
+\textcolor{red}{ Equation \eqref{Eq7} is true ? }
+The boundaries condition is free
+\subsection{In serie configuration}
+
+We consider two elastically coupled motors in series
+
+\begin{equation}\label{Eq8}
+\begin{aligned}
+\dot{x}_{1}= &-\partial_{x_{1}} G(x_{1},y_{1}) -f_{1}(t)+\sqrt{2 D}\xi_{x_{1}}(t)\\
+\dot{y}_{1}=&-\partial_{y_{1}} G(x_{1},y_{1})  +f_{1}(t)+k(y_{2}-y_{1})-k_f(y_{1}-y_{0})+\sqrt{2 D}\xi_{y_{1}}(t)\\
+\dot{x}_{2}= &-\partial_{x_{2}} G(x_{2},y_{2}) -f_{2}(t)+\sqrt{2 D}\xi_{x_{2}}(t)\\
+\dot{y}_{1}=&-\partial_{y_{2}} G(x_{2},y_{2})  +f_{2}(t)-k(y_{2}-y_{1})+\sqrt{2 D}\xi_{y_{2}}(t).
+\end{aligned}
+\end{equation}
+with the reduced potential $G(x_{1,2},y_{1,2}) = \widehat{\Psi}\{y_{1,2}(t)-x_{1,2}(t)\}\Phi(x_{1,2}) + V(y_{1,2}-x_{1,2})$. The $y_0$ it's  a 'slow' variable which can be see as a constant.  We can define the isometric tension generated by the system as:
+\begin{equation}\label{Eq9}
+T = k_{f}(y_{1}-y_{0})
+\end{equation}
+\textcolor{red}{ Equation \eqref{Eq9} is true ? }
+The boundaries condition is free
+\section{non-potential models}
+
+The performance of the power-stroke driven ratchet  can be considerably enhanced if the feedback between the power-stroke and the attachment-detachment mechanisms is made  non-conservative   even in the absence of hysteresis.  This would happen, for instance, if the configurational state of the power-stroke element    affected the position of a myosin head with respect to actin filament, while the reverse influence  remained insignificant, in other words, if the coupling between the power-stroke element and the actin potential was  one-sided.  In this case instead of a passive control we are dealing with an \emph{active control}  represented by a Maxwell demon-type mechanism.
+
+The governing equations describing such ratchet can be written in the form
+\begin{equation}\label{Eq10}
+\begin{aligned}
+\dot{x_{i}}= &-z_{i}\partial_{x_{i}}\Phi(x_{i})-\partial_{x_{i}}V(y_{i}-x_{i})-f_{i}(t)+\sqrt{2 D}\xi_{x}(t)\\
+\dot{y_{i}}=&-\partial_{y_{i}}V(y_{i}-x_{i})-\partial_{y_{i}}\Lambda(y_{i},y_{i+1},y_{i-1})+f_{i}(t)+\sqrt{2 D}\xi_{y_{i}}(t),
+\end{aligned}
+\end{equation}
+where the notations are the same as in \eqref{Eq3}. 
+
+We identify the    external    degree of freedom    with the variable $x$  representing the  location of actin binding face on the actin filament. The most natural   internal  degree of freedom,  describing the configurational state of the power-stroke element, is   $y-x$,  where the variable $y$ was defined in the Introduction.    By introducing the second  internal  variable   $z$, characterizing the separation of the myosin head and the actin filament, we attempt to capture the higher-dimensional effects of  detachment  in the simplest 1D setting.
+
+
+\section{Discussion}
+
+To do
+
+\section{Acknowledgments}
+
+To do
+
+\bibliographystyle{apsrev4-1}
+\bibliography{SheshkaPaper}
+\end{document}
